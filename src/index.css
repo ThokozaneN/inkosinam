@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  background-color: #f9faf7;
+  color: #020617;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background-color: rgba(15, 23, 42, 0.12);
+  color: #020617;
+}
+
+/* Preloader styles for INkosinami Drop-In Center */
+.ink-preloader {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #141414;
+  color: #fff;
+  z-index: 9999;
+  pointer-events: auto;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+.ink-preloader img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ink-preloader .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.ink-preloader nav {
+  position: fixed;
+  width: 100%;
+  padding: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.ink-preloader .nav-item {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ink-preloader .nav-item a {
+  position: relative;
+  top: 20px;
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.35;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ink-preloader .nav-item a#active {
+  opacity: 1;
+}
+
+.ink-preloader .hero {
+  position: absolute;
+  width: 95%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.ink-preloader .icon,
+.ink-preloader .icon-2 {
+  flex: 0.5;
+  padding: 0 5em;
+  font-size: 30px;
+  opacity: 0.5;
+}
+
+.ink-preloader .icon-2 {
+  text-align: right;
+}
+
+.ink-preloader .icon-symbol {
+  display: inline-block;
+  transform: scale(0);
+}
+
+.ink-preloader .title {
+  flex: 2;
+  text-align: center;
+  font-size: 40px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ink-preloader .title p {
+  position: relative;
+  top: 50px;
+}
+
+.ink-preloader footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.ink-preloader .preview {
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  display: flex;
+  gap: 0.3em;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ink-preloader .preview img {
+  position: relative;
+  top: 100px;
+  width: 80px;
+  height: 50px;
+}
+
+.ink-preloader .slide-num {
+  margin: 3em 0;
+  text-align: center;
+  color: #fff;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.ink-preloader .slide-num p {
+  position: relative;
+  top: 30px;
+}
+
+.ink-preloader-grid {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1em;
+}
+
+.ink-preloader-grid .col {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.ink-preloader .col .item {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  background: gainsboro;
+  overflow: hidden;
+}
+
+.ink-preloader .c-1,
+.ink-preloader .c-3,
+.ink-preloader .c-5 {
+  top: 100%;
+}
+
+.ink-preloader .c-1 .item,
+.ink-preloader .c-3 .item,
+.ink-preloader .c-5 .item {
+  top: 100%;
+}
+
+.ink-preloader .c-2 .item,
+.ink-preloader .c-4 .item {
+  top: -100%;
+}
+
+@media (max-width: 900px) {
+  .ink-preloader .slide-num {
+    text-align: left;
+    padding-left: 2em;
+    margin-bottom: 2.5em;
+  }
+
+  .ink-preloader .title {
+    font-size: 30px;
+  }
+
+  .ink-preloader .icon,
+  .ink-preloader .icon-2 {
+    padding: 0 1em;
+    font-size: 16px;
+  }
+
+  .ink-preloader .preview img {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+/* Logo carousel animation */
+.logo-carousel {
+  display: flex;
+  width: 100%;
+}
+
+.logo-track {
+  animation: scroll-left 30s linear infinite;
+  padding-left: 2rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-carousel:hover .logo-track {
+  animation-play-state: paused;
+}
